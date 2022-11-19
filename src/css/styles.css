@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
-textarea {
-    resize: none;
-}
-
 body {
     min-height: 100vh;
     display: flex;
@@ -39,37 +35,47 @@ main {
 
 .texto-container .texto {
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 .formulario {
+    grid-area: formulario;
     max-height: 650px;
     margin: auto;
-    grid-area: formulario;
     padding: 1.4rem;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
 }
 
+.formulario > input {
+    height: 2.4rem;
+}
+
 .formulario > input, .formulario textarea {
+    margin-top: 1rem;
     border: 1px solid #000000;
     border-radius: 5px;
-    margin-bottom: 0.5rem;
     padding-left: 10px;    
     font-weight: 700;
     font-size: 1rem;
 }
 
-.formulario > input {
-    height: 2.4rem;
-    margin-bottom: 1rem;
+.formulario input:first-child {
+    margin-top: 0;
 }
 
 .formulario .observacao {
+    margin-top: 0.5rem;
     color: #000000;
 }
 
-.formulario .botao-enviar {
+.formulario .mensagem-campo-obrigatorio {
+    display: none;
+    color: #ff0000;
+}
+
+.formulario #botao-enviar {
     height: 2.5rem;
     margin-top: 1.4rem;
     background-color: #3CCC87;
@@ -80,9 +86,12 @@ main {
     transition: opacity 0.3s ease-in-out;
     font-size: 1rem;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.formulario .botao-enviar:hover {
+.formulario #botao-enviar:hover {
     opacity: 0.8;
 }
 
@@ -115,20 +124,23 @@ main {
         padding: 2rem 3rem;
     }
 
-    .formulario > input, .formulario textarea, .formulario .observacao, .formulario .botao-enviar {
+    .formulario > input {
+        height: 3rem;
+    }
+
+    .formulario > input, .formulario textarea {
+        margin-top: 2rem;
+    }
+
+    .formulario > input, .formulario textarea, .formulario .observacao, .formulario #botao-enviar {
         font-size: 1.4rem;
     }
 
-    .formulario > input {
-        height: 3rem;
-        margin-bottom: 2rem;
+    .formulario .observacao {
+        margin-top: 1rem;
     }
 
-    .formulario textarea {
-        margin-bottom: 1rem;
-    }
-
-    .formulario .botao-enviar {
+    .formulario #botao-enviar {
         height: 5rem;
         margin-top: 2rem;
     }
