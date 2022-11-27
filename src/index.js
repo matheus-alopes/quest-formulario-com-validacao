@@ -1,10 +1,6 @@
-const nomeDoUsuario = document.getElementById("user-name");
-const emailDoUsuario = document.getElementById("user-email");
-const telefoneDoUsuario = document.getElementById("user-number");
-const mensagemDoUsuario = document.getElementById("user-message");
 const botaoEnviar = document.getElementById("botao-enviar");
+const inputs = document.querySelectorAll(".input");
 const mensagensCampoObrigatorio = document.getElementsByClassName("mensagem-campo-obrigatorio");
-
 
 function checarPreenchimento(input, array, index) {
     if(input.value == "") {
@@ -18,12 +14,8 @@ function checarPreenchimento(input, array, index) {
 
 botaoEnviar.addEventListener("click",
     () => {
-        checarPreenchimento(nomeDoUsuario, mensagensCampoObrigatorio, 0);
-        checarPreenchimento(emailDoUsuario, mensagensCampoObrigatorio, 1);
-        checarPreenchimento(telefoneDoUsuario, mensagensCampoObrigatorio, 2);
-        checarPreenchimento(mensagemDoUsuario, mensagensCampoObrigatorio, 3);
+        for (let index = 0; index < inputs.length; index++) {
+            checarPreenchimento(inputs[index], mensagensCampoObrigatorio, index);
+        }
     }
 )
-
-
-
